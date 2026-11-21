@@ -280,16 +280,6 @@ returned as a `500 Internal Server Error`. In practice, you will see `500` in th
 | Invalid `id` format (not a 24-char hex ObjectId)    | `500`          |
 | Updating or deleting a user that does not exist     | `500`          |
 
-## Known Limitations
-
-- The server port is fixed at `3000` and cannot be changed through environment variables.
-- `age` is stored as a `String` instead of a number.
-- `POST` and `PUT` return the request body rather than the saved record (no `id` in the response).
-- `PUT` returns `201 Created`; `200 OK` would be the conventional status for an update.
-- No input validation and no differentiated error responses (`400`, `404`, `409`).
-- Name filtering on `GET /usuarios` is exact-match and case-sensitive.
-- No automated tests (`npm test` is a placeholder).
-
 ## Roadmap
 
 - [ ] Read the port from `process.env.PORT`
